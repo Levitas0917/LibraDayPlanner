@@ -1,0 +1,133 @@
+<!-- filepath: c:\webGIS\geog7311_project_package_1\_programs\xampp\htdocs\Labs\LibraDayPlanner\index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LibraDay Planner - Hong Kong Libraries</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="container">
+    <!-- Map -->
+    <div id="map"></div>
+
+    <!-- Sidebar -->
+    <div id="sidebar">
+        <h2><i class="fas fa-route"></i> LibraDay Planner</h2>
+
+        
+        <!-- User History Section -->
+        <div class="section_card">
+          <input type="text" id="username" placeholder="Input User Name" class="input-field">
+          <button onclick="loadUserHistory()" class="filter-btn">
+              <i class="fas fa-history"></i>Load User History
+          </button>
+      </div>
+
+
+        <!-- Library Selection -->
+        <div class="module-card">
+            <h3>🏢 Library Selection</h3>
+            <div class="button-group">
+              <button id="editLibraryBtn" class="filter-btn">Edit</button>  
+              <button id="loadLibraryBtn" class="filter-btn">Load</button>
+            </div>
+        </div>
+
+
+        <!-- POI Filter -->
+        <div class="module-card">
+          <h3 class="filter-title"><span class="pin-icon">📍</span>Nearby Facilities</h3>
+          <div class="poi-filter">
+            <label class="filter-option">
+              <input type="checkbox" class="poi-type" value="restaurant">
+              <span class="checkmark"></span>
+              <span class="option-text">Restaurant</span>
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" class="poi-type" value="park">
+              <span class="checkmark"></span>
+              <span class="option-text">Park</span>
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" class="poi-type" value="swim">
+              <span class="checkmark"></span>
+              <span class="option-text">Swimming Pool</span>
+            </label>
+        </div>
+        <div class="button-group">
+          <button id="editPOIBtn" class="filter-btn">Edit</button>
+          <button id="loadPOIBtn" class="filter-btn">Load</button>
+        </div>
+</div>
+
+
+        <!-- Route Templates -->
+        <div class="module-card">
+            <h3>🚶 Route Templates</h3>
+            <select id="routeTemplate">
+                <!-- Note that this option value should be the same as wms layer name -->
+                <option value="path_study_life">Study + Life</option>
+                <option value="path_intensive_study">Intensive Study</option>
+                <option value="path_light_study">Light Study</option>
+            </select>
+            <button id="loadRouteBtn" class="filter-btn">Load Route</button>
+        </div>
+
+        
+        <!-- Timetable Editor -->
+        <div class="module-card">
+          <h3>⏰ Timetable Editor</h3>
+
+          <!-- template select -->
+          <div class="template-selector">
+            <select id="templateSelect" class="template-dropdown">
+              <option value="custom">Custom</option>
+              <option value="study">Study Routine</option>
+              <option value="fitness">Fitness Plan</option>
+              <option value="balanced">Balanced Day</option>
+            </select>
+          </div>
+  
+          <!-- timetable form -->
+          <table class="timetable-table">
+            <thead>
+              <tr>
+                <th>Period</th>
+                <th>Task</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Morning</td>
+                <td class="editable" contenteditable="true">Study</td>
+              </tr>
+              <tr>
+                <td>Lunch</td>
+                <td class="editable" contenteditable="true">Lunch</td>
+              </tr>
+              <tr>
+                <td>Afternoon</td>
+                <td class="editable" contenteditable="true">Walk</td>
+              </tr>
+              <tr>
+                <td>Evening</td>
+                <td class="editable" contenteditable="true">Sports</td>
+              </tr>
+            </tbody>
+          </table>
+  
+          <div class="controls">
+            <button class="export-csv-btn">Save as CSV</button>
+          </div>
+        </div>
+    </div>
+</div>
+
+<!-- Leaflet and Main JS -->
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

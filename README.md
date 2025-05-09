@@ -11,7 +11,6 @@ LibraDayPlanner
 │   ├── db_connect.php
 │   └── getUserLayer.php
 ├── data
-│   ├── hongkong.geojson
 │   ├── libraries.json
 │   ├── restaurant_selected.geojson
 │   ├── parks.json

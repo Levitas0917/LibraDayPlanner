@@ -1,0 +1,24 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Hong Kong",
+        "description": "The geographical boundaries of Hong Kong."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [114.154, 22.202],
+            [114.257, 22.202],
+            [114.257, 22.307],
+            [114.154, 22.307],
+            [114.154, 22.202]
+          ]
+        ]
+      }
+    }
+  ]
+}
